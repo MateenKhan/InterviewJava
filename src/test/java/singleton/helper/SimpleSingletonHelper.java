@@ -35,7 +35,7 @@ public class SimpleSingletonHelper {
         return output;
     }
 
-    public static SimpleSingleton getReflectionSimpleObject() {
+    public static SimpleSingleton getReflectionSimpleObject() throws Exception {
         SimpleSingleton output = null;
         try {
             Constructor constructor = SimpleSingleton.class.getDeclaredConstructor();
@@ -43,6 +43,7 @@ public class SimpleSingletonHelper {
             output = (SimpleSingleton) constructor.newInstance();
         } catch (Exception e) {
             e.printStackTrace();
+            throw e;
         }
         return output;
     }
